@@ -1,0 +1,13 @@
+<table>
+	<% @minerals.each do |mineral, price| %>
+		<tr>
+			<td><%= mineral %></td>
+			<td><input class="min_value" type="text" name="<%= mineral %>" value="<%= price %>" id="price_<%=mineral%>"/></td>
+		</tr>
+	<% end %>
+	<tr>
+		<td colspan="2">
+			<a href="#" onclick="do_the_math()"><img src="/imgs/arrow_refresh.png" alt="recalculate"></a>
+		</td>
+	</tr>
+</table>

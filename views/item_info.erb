@@ -1,0 +1,26 @@
+<div class="title">
+	<h4>REPROCESS</h4>
+</div>
+<hr/>
+
+<div class="item">
+	Search:
+	<input type="text" name="item_select" value="" id="item_select" size="70" />
+	<div id="autocomplete"></div>
+</div>
+
+<div id="info">
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	$('#item_select').keyup(function() {
+		if ($('#item_select').val() == "") {
+			$('#autocomplete').hide()
+		} else {
+			$('#autocomplete').load('/find_item', { item: $('#item_select').val() }, function(data) {
+				$('#autocomplete').show()
+			})
+		}
+	})
+
+</script>
